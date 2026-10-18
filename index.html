@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f7f2" />
+    <meta name="description" content="Make your rankings, settle your debates, and build a tier list of your own." />
+    <title>Tier Studio — Make your ranking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT,WONK@9..144,500,20,1;9..144,600,20,1&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['Fraunces', 'Georgia', 'serif'],
+              sans: ['"DM Sans"', 'sans-serif'],
+            },
+            keyframes: {
+              'rise-in': { from: { opacity: 0, transform: 'translateY(10px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
+              'tile-in': { from: { opacity: 0, transform: 'scale(.94)' }, to: { opacity: 1, transform: 'scale(1)' } },
+              'pop-in': {
+                '0%': { transform: 'scale(1.16) rotate(-3deg)' },
+                '55%': { transform: 'scale(.96) rotate(1deg)' },
+                '100%': { transform: 'scale(1) rotate(0)' },
+              },
+            },
+            animation: {
+              'rise-in': 'rise-in .55s both',
+              'tile-in': 'tile-in .28s both',
+              'pop-in': 'pop-in .32s ease-out both',
+            },
+          },
+        },
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
